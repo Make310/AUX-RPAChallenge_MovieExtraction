@@ -1,0 +1,120 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="E_1_MovieExtraction_CloseBrowser" VisualBasic.Settings="{x:Null}" sap2010:WorkflowViewState.IdRef="E_1_MovieExtraction_CloseBrowser_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>System.Linq.Expressions</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Models</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>UiPath.Platform.SyncObjects</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.Common</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Drawing.Common</AssemblyReference>
+      <AssemblyReference>System.Drawing.Primitives</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.Net.Mail</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities.Design</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>System.Linq.Expressions</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Testing.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence sap2010:Annotation.AnnotationText="Closes the Rotten Tomatoes browser session after all movie data has been extracted.  Ensures proper cleanup of resources and prevents unnecessary browser instances from remaining open." DisplayName="E_1.MovieExtraction_CloseBrowser" sap:VirtualizedContainerService.HintSize="1952,788.04" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+        <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <ui:LogMessage DisplayName="Log Message - Start WorkFlow" sap:VirtualizedContainerService.HintSize="434,173" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Trace" Message="[&quot;[START] Executing workflow: E-1.MovieExtraction_CloseBrowser&quot;]">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </ui:LogMessage>
+    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Always" DisplayName="Rotte Tomatoes Website - Close" sap:VirtualizedContainerService.HintSize="434,264" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" OpenMode="Never" ScopeGuid="33afbaa4-5e84-4db1-8934-21ac9e4dba47" Version="V2">
+      <uix:NApplicationCard.Body>
+        <ActivityAction x:TypeArguments="x:Object">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+          </ActivityAction.Argument>
+        </ActivityAction>
+      </uix:NApplicationCard.Body>
+      <uix:NApplicationCard.TargetApp>
+        <uix:TargetApp Area="-11, -11, 1942, 1042" BrowserType="Chrome" ContentHash="lsiYdkaQIUuc6z03oL7oNA" IconBase64="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" InformativeScreenshot="1b9e99ed1adf194858998d11b32df0ff.jpg" Reference="FbyKb7lWrE2X0PieRSaP1Q/TaNs4Cc5w0mrPD4NFL2Big" Selector="&lt;html app='chrome.exe' title='Captain America: Brave New World | Rotten Tomatoes' /&gt;" Title="Captain America: Brave New World | Rotten Tomatoes" Url="https://www.rottentomatoes.com/m/captain_america_brave_new_world" Version="V2" />
+      </uix:NApplicationCard.TargetApp>
+    </uix:NApplicationCard>
+    <ui:LogMessage DisplayName="Log Message - End WorkFlow" sap:VirtualizedContainerService.HintSize="434,164" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Trace" Message="[&quot;[END] Workflow execution completed: E-1.MovieExtraction_CloseBrowser&quot;]">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </ui:LogMessage>
+  </Sequence>
+</Activity>

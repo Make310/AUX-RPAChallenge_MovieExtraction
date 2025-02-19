@@ -1,0 +1,13 @@
+﻿{
+  "Name": "Chrome Captain America Brave New World  Rotte",
+  "Type": "Screen",
+  "Id": "TaNs4Cc5w0mrPD4NFL2Big",
+  "Reference": "FbyKb7lWrE2X0PieRSaP1Q/TaNs4Cc5w0mrPD4NFL2Big",
+  "ParentRef": "FbyKb7lWrE2X0PieRSaP1Q/ElbsbUYy4E2tfynstqRLVA",
+  "Created": "2025-02-19T21:17:30.062466Z",
+  "Updated": "2025-02-19T21:17:30.062466Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=24.12.1.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=24.11.1.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

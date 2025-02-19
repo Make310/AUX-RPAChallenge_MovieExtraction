@@ -1,0 +1,12 @@
+﻿{
+  "Name": "Chrome Captain America Brave New World  Rotten Tomatoes",
+  "Type": "App",
+  "Id": "g8nbQcyUmk2yVAR6beNMNw",
+  "Reference": "FbyKb7lWrE2X0PieRSaP1Q/g8nbQcyUmk2yVAR6beNMNw",
+  "Created": "2025-02-19T21:17:30.0427391Z",
+  "Updated": "2025-02-19T21:17:30.0427391Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=24.12.1.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=24.11.1.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}
