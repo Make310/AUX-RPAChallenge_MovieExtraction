@@ -1,0 +1,323 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="P_1_MovieExtraction_ExtractMovieDetail" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="in_TransactionItem" Type="InArgument(sd:DataRow)" />
+    <x:Property Name="in_TargetOutputResult" Type="InArgument(x:String)" />
+    <x:Property Name="in_RPAChallengeURL" Type="InArgument(x:String)" />
+  </x:Members>
+  <VisualBasic.Settings>
+    <x:Null />
+  </VisualBasic.Settings>
+  <sap2010:WorkflowViewState.IdRef>P_1_MovieExtraction_ExtractMovieDetail_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>System.Linq.Expressions</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Models</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>UiPath.Platform.SyncObjects</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities.Models</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities.Services.RuntimeAnalyze</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>System.Xml.Serialization</x:String>
+      <x:String>UiPath.Excel</x:String>
+      <x:String>UiPath.Platform.ResourceHandling</x:String>
+      <x:String>UiPath.Excel.Activities</x:String>
+      <x:String>UiPath.UIAutomationNext.Models.ExtractData</x:String>
+      <x:String>UiPath.UIAutomationNext.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Models.CV</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.Common</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Drawing.Common</AssemblyReference>
+      <AssemblyReference>System.Drawing.Primitives</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.Net.Mail</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>System.Data.SqlClient</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities.Design</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Collections</AssemblyReference>
+      <AssemblyReference>System.Collections.NonGeneric</AssemblyReference>
+      <AssemblyReference>System.Linq.Expressions</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Testing.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
+      <AssemblyReference>System.Private.Xml</AssemblyReference>
+      <AssemblyReference>UiPath.Excel</AssemblyReference>
+      <AssemblyReference>System.Linq.Async</AssemblyReference>
+      <AssemblyReference>System.Linq.Parallel</AssemblyReference>
+      <AssemblyReference>System.Collections.Immutable</AssemblyReference>
+      <AssemblyReference>System.Linq.Queryable</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence sap2010:Annotation.AnnotationText="Extracts detailed information for each movie from Rotten Tomatoes, including director, protagonists, genre, rating, and synopsis.  &#xA;Formats and cleans the extracted data before storing it in the results file. " DisplayName="P_1.MovieExtraction_ExtractMovieDetail" sap:VirtualizedContainerService.HintSize="1194.6666666666667,1512" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="x:String" Name="Director" />
+      <Variable x:TypeArguments="x:String" Name="Protagonists" />
+      <Variable x:TypeArguments="x:String" Name="Genre" />
+      <Variable x:TypeArguments="x:String" Name="Rating" />
+      <Variable x:TypeArguments="x:String" Name="Synopsis" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+        <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <ui:LogMessage DisplayName="Log Message - Start WorkFlow" sap:VirtualizedContainerService.HintSize="502,57.333333333333336" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Trace" Message="[&quot;[START] Executing workflow: P-1.MovieExtraction_ExtractMovieDetail&quot;]">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </ui:LogMessage>
+    <uix:NApplicationCard sap2010:Annotation.AnnotationText="Navigates to the Rotten Tomatoes movie details page and extracts relevant information.  &#xA;Ensures data accuracy by retrieving director, protagonists, genre, rating, and synopsis.  " AttachMode="ByInstance" CloseMode="Never" DisplayName="Chrome Rotten Tomatoes Movies  - Details" sap:VirtualizedContainerService.HintSize="502,987.3333333333334" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" OpenMode="Never" ScopeGuid="d88721d9-4a07-42c5-a79f-796003c7a1b5" Version="V2">
+      <uix:NApplicationCard.Body>
+        <ActivityAction x:TypeArguments="x:Object">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Do - Extract Info" sap:VirtualizedContainerService.HintSize="468,634" sap2010:WorkflowViewState.IdRef="Sequence_2">
+            <Sequence.Variables>
+              <Variable x:TypeArguments="sd:DataTable" Default="[New System.Data.DataTable]" Name="dt_protagonists" />
+            </Sequence.Variables>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <uix:NGoToUrl DisplayName="Go To URL - Movie Detail" sap:VirtualizedContainerService.HintSize="434,116.66666666666667" sap2010:WorkflowViewState.IdRef="NGoToUrl_1" Url="[in_RPAChallengeURL + &quot;m/&quot; + in_TransactionItem(&quot;Title&quot;).ToString]" Version="V4" />
+            <uix:NExtractData AppendResults="False" ContinueOnError="True" DataTable="[dt_protagonists]" DisplayName="Extract Protagonists Data" ExtractDataSettings="&lt;Table xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xmlns:xsd='http://www.w3.org/2001/XMLSchema' Type='Structured' AddCvHeader='true' IsScrollEnabled='false'&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Column0' Name='Protagonist'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;true&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&lt;/Table&gt;" ExtractMetadata="&lt;extract&gt;&lt;column exact='1' name='Column0' attr='fulltext'&gt;&lt;webctrl tag='a' /&gt;&lt;webctrl tag='tile-dynamic' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='p' idx='1' /&gt;&lt;/column&gt;&lt;/extract&gt;" sap:VirtualizedContainerService.HintSize="434,57.333333333333336" sap2010:WorkflowViewState.IdRef="NExtractData_2" LimitExtractionTo="None" MaximumResults="0" ScopeIdentifier="d88721d9-4a07-42c5-a79f-796003c7a1b5" Version="V4">
+              <uix:NExtractData.Target>
+                <uix:TargetAnchorable BrowserURL="https://www.rottentomatoes.com/m/captain_america_brave_new_world" DesignTimeRectangle="182, 573, 1068, 228" DesignTimeScaleFactor="1.5" FullSelectorArgument="&lt;webctrl css-selector='body&amp;gt;div&amp;gt;main&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;section&amp;gt;div&amp;gt;drawer-more&amp;gt;div' parentid='modules-wrap' tag='DIV' /&gt;" Guid="de360e94-f72c-4612-b0b9-ae8c5ec8db44" InformativeScreenshot="05e1692bffb33f0f64046b4ab2c57707.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Captain America: Brave New World | Rotten Tomatoes' /&gt;" SearchSteps="Selector" Version="V5" Visibility="Interactive" />
+              </uix:NExtractData.Target>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </uix:NExtractData>
+            <Assign DisplayName="Assign - Clean Protagonists" sap:VirtualizedContainerService.HintSize="434,57.333333333333336" sap2010:WorkflowViewState.IdRef="Assign_3">
+              <Assign.To>
+                <OutArgument x:TypeArguments="x:String">[Protagonists]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="x:String">[String.Join(", ", dt_protagonists.AsEnumerable().Select(Function(row) row(0).ToString()).ToArray())]</InArgument>
+              </Assign.Value>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </Assign>
+            <uix:NGetText DisplayName="Get Text - Director" sap:VirtualizedContainerService.HintSize="434,57.333333333333336" sap2010:WorkflowViewState.IdRef="NGetText_1" ScopeIdentifier="d88721d9-4a07-42c5-a79f-796003c7a1b5" TextString="[Director]" Version="V4">
+              <uix:NGetText.Target>
+                <uix:TargetAnchorable BrowserURL="rottentomatoes.com/m/mufasa_the_lion_king" ContentHash="UqtkPkMT7keEq0jSHA260Q" DesignTimeRectangle="408, 500, 135, 30" DesignTimeScaleFactor="1.5" FullSelectorArgument="&lt;webctrl href='/celebrity/*' isleaf='1' parentid='modules-wrap' tag='RT-LINK' /&gt;" Guid="aea72977-15cc-4d42-9384-b3862d5c9a3e" ImageBase64="" InformativeScreenshot="e5136f4d7c179f7bb7cc72b298bc8fa6.png" Reference="FbyKb7lWrE2X0PieRSaP1Q/k8gnjHG1R0C4KglGMGgKkQ" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Mufasa: The Lion King | Rotten Tomatoes' /&gt;" SearchSteps="Selector" Version="V5" Visibility="Interactive">
+                  <uix:TargetAnchorable.Anchors>
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                      <uix:Target DesignTimeRectangle="206, 500, 69, 30" FuzzySelectorArgument="&lt;webctrl class='key' type='' parentid='modules-wrap' tag='RT-TEXT' aaname='Director' check:innerText='Director' /&gt;" Guid="827bdc8c-024e-4203-94e2-08f431784a50" SearchSteps="FuzzySelector" />
+                    </scg:List>
+                  </uix:TargetAnchorable.Anchors>
+                </uix:TargetAnchorable>
+              </uix:NGetText.Target>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </uix:NGetText>
+            <uix:NGetText DisplayName="Get Text - Genre" sap:VirtualizedContainerService.HintSize="434,57.333333333333336" sap2010:WorkflowViewState.IdRef="NGetText_2" ScopeIdentifier="d88721d9-4a07-42c5-a79f-796003c7a1b5" TextString="[Genre]" Version="V4">
+              <uix:NGetText.Target>
+                <uix:TargetAnchorable BrowserURL="rottentomatoes.com/m/mufasa_the_lion_king" ContentHash="6E8X3ORON02Kp5XP23zZdg" DesignTimeRectangle="408, 836, 446, 30" DesignTimeScaleFactor="1.5" FuzzySelectorArgument="&lt;webctrl type='' tag='DD' class='' aaname='                                                                                                                    ' /&gt;" Guid="8d072449-e992-4e2f-82ee-07ed7ab988a1" InformativeScreenshot="a27fd50d415c3f90040cabc9532fdc62.png" Reference="FbyKb7lWrE2X0PieRSaP1Q/NMMqxz2uL0WIrNQtzH0bDw" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Mufasa: The Lion King | Rotten Tomatoes' /&gt;" SearchSteps="FuzzySelector" Version="V5" Visibility="Interactive">
+                  <uix:TargetAnchorable.Anchors>
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                      <uix:Target DesignTimeRectangle="206, 836, 53, 30" FuzzySelectorArgument="&lt;webctrl class='key' type='' aaname='Genre' parentid='modules-wrap' tag='RT-TEXT' check:innerText='Genre' /&gt;" Guid="6526f869-6b67-4c16-bff9-98d9f7c54323" SearchSteps="FuzzySelector" />
+                    </scg:List>
+                  </uix:TargetAnchorable.Anchors>
+                </uix:TargetAnchorable>
+              </uix:NGetText.Target>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </uix:NGetText>
+            <Assign DisplayName="Assign - Clean Genre" sap:VirtualizedContainerService.HintSize="434,117.33333333333333" sap2010:WorkflowViewState.IdRef="Assign_2">
+              <Assign.To>
+                <OutArgument x:TypeArguments="x:String">[Genre]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="x:String">[Genre.Replace(" ", "")]</InArgument>
+              </Assign.Value>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </Assign>
+            <uix:NGetText DisplayName="Get Text - Score" sap:VirtualizedContainerService.HintSize="434,57.333333333333336" sap2010:WorkflowViewState.IdRef="NGetText_3" ScopeIdentifier="d88721d9-4a07-42c5-a79f-796003c7a1b5" TextString="[Rating]" Version="V4">
+              <uix:NGetText.Target>
+                <uix:TargetAnchorable BrowserURL="rottentomatoes.com/m/mufasa_the_lion_king" ContentHash="Sk_gmK8kRk6xPd_gSHk1Rw" DesignTimeRectangle="514, 648, 99, 41" DesignTimeScaleFactor="1.5" FuzzySelectorArgument="&lt;webctrl aria-role='button' tag='RT-TEXT' type='' class='' /&gt;" Guid="5ce35ba0-6014-49af-9dd6-a4a9f08f01a1" InformativeScreenshot="2620bd749a39b39a3e27c2a7c4b34dcf.png" Reference="FbyKb7lWrE2X0PieRSaP1Q/vZJYgiq-sEaEPyCBX-Z1zg" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Mufasa: The Lion King | Rotten Tomatoes' /&gt;" SearchSteps="FuzzySelector" Version="V5" Visibility="Interactive">
+                  <uix:TargetAnchorable.Anchors>
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                      <uix:Target DesignTimeRectangle="434, 650, 60, 58" ElementType="Icon" FuzzySelectorArgument="&lt;webctrl parentid='modules-wrap' tag='SCORE-ICON-CRITICS' /&gt;&lt;webctrl shadowhostid='' tag='path' type='' class='' aaname='' /&gt;" Guid="d17b5ebc-362c-47ce-b651-e02c24d2b7e1" SearchSteps="FuzzySelector" />
+                    </scg:List>
+                  </uix:TargetAnchorable.Anchors>
+                </uix:TargetAnchorable>
+              </uix:NGetText.Target>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </uix:NGetText>
+            <uix:NGetText DisplayName="Get Text - Synopsis" sap:VirtualizedContainerService.HintSize="434,50.666666666666664" sap2010:WorkflowViewState.IdRef="NGetText_4" ScopeIdentifier="d88721d9-4a07-42c5-a79f-796003c7a1b5" TextString="[Synopsis]" Version="V4">
+              <uix:NGetText.Target>
+                <uix:TargetAnchorable BrowserURL="rottentomatoes.com/m/mufasa_the_lion_king" ContentHash="3hYRRe9B5ku0YKLOQMiqGA" DesignTimeRectangle="206, 722, 1020, 180" DesignTimeScaleFactor="1.5" FuzzySelectorArgument="&lt;webctrl type='' class='' isleaf='1' parentid='modules-wrap' tag='RT-TEXT' /&gt;" Guid="468869db-1338-46bf-9689-b1399d23450b" InformativeScreenshot="905789bf157fa924f4ebc46f6e431c3f.png" Reference="FbyKb7lWrE2X0PieRSaP1Q/3Vqn0Y3Vc0OKUAm_IDabqw" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Mufasa: The Lion King | Rotten Tomatoes' /&gt;" SearchSteps="FuzzySelector" Version="V5" Visibility="Interactive">
+                  <uix:TargetAnchorable.Anchors>
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                      <uix:Target DesignTimeRectangle="206, 680, 1020, 30" FuzzySelectorArgument="&lt;webctrl class='key' parentid='modules-wrap' tag='RT-TEXT' type='' aaname='Synopsis' check:innerText='Synopsis' /&gt;" Guid="f7944557-f328-4498-bc6c-74a95cec67c1" SearchSteps="FuzzySelector" />
+                    </scg:List>
+                  </uix:TargetAnchorable.Anchors>
+                </uix:TargetAnchorable>
+              </uix:NGetText.Target>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </uix:NGetText>
+          </Sequence>
+        </ActivityAction>
+      </uix:NApplicationCard.Body>
+      <uix:NApplicationCard.TargetApp>
+        <uix:TargetApp Area="-11, -11, 1942, 1042" BrowserType="Chrome" ContentHash="ZaFyOaW3mUWlEc3K33EicA" IconBase64="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" InformativeScreenshot="35d10d53ee7d3d9e6d26f9193a1536d2.jpg" Reference="FbyKb7lWrE2X0PieRSaP1Q/C_gPnMM43USAfMZZWHH7UQ" Selector="&lt;html app='chrome.exe' url='https://www.rottentomatoes.com/*' /&gt;" Title="Rotten Tomatoes: Movies | TV Shows | Movie Trailers | Reviews | Rotten Tomatoes" Url="[in_RPAChallengeURL]" Version="V2" />
+      </uix:NApplicationCard.TargetApp>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </uix:NApplicationCard>
+    <Sequence sap2010:Annotation.AnnotationText="Processes and structures extracted movie data before saving it.  &#xA;Builds a DataTable and appends the formatted results into an Excel file for reporting. " DisplayName="Sequence - Write Results" sap:VirtualizedContainerService.HintSize="502,351.3333333333333" sap2010:WorkflowViewState.IdRef="Sequence_3">
+      <Sequence.Variables>
+        <Variable x:TypeArguments="sd:DataTable" Name="dt_Results" />
+      </Sequence.Variables>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <ui:BuildDataTable DataTable="[dt_Results]" DisplayName="Build - Table Results" sap:VirtualizedContainerService.HintSize="416,92" sap2010:WorkflowViewState.IdRef="BuildDataTable_1" TableInfo="&lt;NewDataSet&gt;&#xA;  &lt;xs:schema id=&quot;NewDataSet&quot; xmlns=&quot;&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:msdata=&quot;urn:schemas-microsoft-com:xml-msdata&quot;&gt;&#xA;    &lt;xs:element name=&quot;NewDataSet&quot; msdata:IsDataSet=&quot;true&quot; msdata:MainDataTable=&quot;TableName&quot; msdata:UseCurrentLocale=&quot;true&quot;&gt;&#xA;      &lt;xs:complexType&gt;&#xA;        &lt;xs:choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;&#xA;          &lt;xs:element name=&quot;TableName&quot;&gt;&#xA;            &lt;xs:complexType&gt;&#xA;              &lt;xs:sequence&gt;&#xA;                &lt;xs:element name=&quot;Director&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;protagonists&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Genre&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Rating&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Synopsis&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;              &lt;/xs:sequence&gt;&#xA;            &lt;/xs:complexType&gt;&#xA;          &lt;/xs:element&gt;&#xA;        &lt;/xs:choice&gt;&#xA;      &lt;/xs:complexType&gt;&#xA;    &lt;/xs:element&gt;&#xA;  &lt;/xs:schema&gt;&#xA;&lt;/NewDataSet&gt;">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </ui:BuildDataTable>
+      <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{Director, Protagonists, Genre, Rating, Synopsis}]" DataTable="[dt_Results]" DisplayName="Add Result Row To DataTable" sap:VirtualizedContainerService.HintSize="416,57.333333333333336" sap2010:WorkflowViewState.IdRef="AddDataRow_1">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </ui:AddDataRow>
+      <ui:AppendRange WorkbookPathResource="{x:Null}" DataTable="[dt_Results]" DisplayName="Append Result Workbook" sap:VirtualizedContainerService.HintSize="416,48" sap2010:WorkflowViewState.IdRef="AppendRange_1" SheetName="Hoja1" WorkbookPath="[Environment.CurrentDirectory + &quot;/&quot; + in_TargetOutputResult]">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </ui:AppendRange>
+    </Sequence>
+    <ui:LogMessage DisplayName="Log Message - End WorkFlow" sap:VirtualizedContainerService.HintSize="502,48" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Trace" Message="[&quot;[END] Workflow execution completed: P-1.MovieExtraction_ExtractMovieDetail&quot;]">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </ui:LogMessage>
+  </Sequence>
+</Activity>

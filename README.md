@@ -1,39 +1,52 @@
-### Documentation is included in the Documentation folder ###
+# 🎬 AUX-RPAChallenge_MovieExtraction
 
+## 📌 Project Overview
+This process automates the extraction of movie data using UiPath, following best practices and leveraging the **REFramework**.  
+It searches for movie details on **Rotten Tomatoes** and extracts key information such as:
+- 🎬 **Director**
+- 🌟 **Protagonists**
+- 🎭 **Genre**
+- ⭐ **Rating**
+- 📝 **Synopsis**
 
-### REFrameWork Template ###
-**Robotic Enterprise Framework**
+The extracted data is then stored in an **Excel report** and sent via **email**.
 
-* Built on top of *Transactional Business Process* template
-* Uses *State Machine* layout for the phases of automation project
-* Offers high level logging, exception handling and recovery
-* Keeps external settings in *Config.xlsx* file and Orchestrator assets
-* Pulls credentials from Orchestrator assets and *Windows Credential Manager*
-* Gets transaction data from Orchestrator queue and updates back status
-* Takes screenshots in case of system exceptions
+---
 
+## 🚀 Features
+✔ **Web Automation** → Uses browser automation to navigate Rotten Tomatoes and extract movie details.  
+✔ **Excel Processing** → Reads movie names from an input file and writes extracted data to an output file.  
+✔ **Structured Data Handling** → Uses a **DataTable** instead of Orchestrator Queues for better flexibility.  
+✔ **Email Integration** → Sends the final extracted report automatically.  
+✔ **Logging & Error Handling** → Implements best practices for debugging and troubleshooting.  
 
-### How It Works ###
+---
 
-1. **INITIALIZE PROCESS**
- + ./Framework/*InitiAllSettings* - Load configuration data from Config.xlsx file and from assets
- + ./Framework/*GetAppCredential* - Retrieve credentials from Orchestrator assets or local Windows Credential Manager
- + ./Framework/*InitiAllApplications* - Open and login to applications used throughout the process
+## 📌 How It Works
 
-2. **GET TRANSACTION DATA**
- + ./Framework/*GetTransactionData* - Fetches transactions from an Orchestrator queue defined by Config("OrchestratorQueueName") or any other configured data source
+### **1️⃣ Initialization (`Init`)**
+- **`InitAllSettings.xaml`** → Loads configuration data from `Config.xlsx`.
+- **`InitAllApplications.xaml`** → Opens the browser and prepares the automation environment.
+- **`I-1.MovieExtraction_OpenBrowser.xaml`** → Opens **Rotten Tomatoes** homepage.
+- **`I-2.MovieExtraction_PrepareFileResults.xaml`** → Prepare the final file result.
+- **`I-3.MovieExtraction_ExtractData.xaml`** → Get Movie table.
 
-3. **PROCESS TRANSACTION**
- + *Process* - Process trasaction and invoke other workflows related to the process being automated 
- + ./Framework/*SetTransactionStatus* - Updates the status of the processed transaction (Orchestrator transactions by default): Success, Business Rule Exception or System Exception
+### **2️⃣ Get Transaction Data (`GetTransactionData`)**
+- **Extracts each movie title as a transaction** to be processed.
+- **Handles structured data extraction** to avoid duplicate searches.
+- **`G-1.MovieExtraction_SendEmailResults.xaml`** → Sends the final report via email.
 
-4. **END PROCESS**
- + ./Framework/*CloseAllApplications* - Logs out and closes applications used throughout the process
+### **3️⃣ Process Transaction (`Process`)**
+- **`P-1.MovieExtraction_ExtractMovieDetail.xaml`** → Searches each movie on Rotten Tomatoes.
 
+### **4️⃣ End Process (`End Process`)**
+- **`E-1.MovieExtraction_CloseBrowser.xaml`** → Closes the browser session after extraction.
 
-### For New Project ###
+---
 
-1. Check the Config.xlsx file and add/customize any required fields and values
-2. Implement InitiAllApplications.xaml and CloseAllApplicatoins.xaml workflows, linking them in the Config.xlsx fields
-3. Implement GetTransactionData.xaml and SetTransactionStatus.xaml according to the transaction type being used (Orchestrator queues by default)
-4. Implement Process.xaml workflow and invoke other workflows related to the process being automated
+## 🛠️ Setup Instructions
+
+1️⃣ **Clone this repository**  
+```bash
+git clone https://github.com/Make310/AUX-RPAChallenge_MovieExtraction
+

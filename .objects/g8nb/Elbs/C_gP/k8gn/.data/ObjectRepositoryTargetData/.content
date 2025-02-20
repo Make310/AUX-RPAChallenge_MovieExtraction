@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="UqtkPkMT7keEq0jSHA260Q" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="rottentomatoes.com/m/mufasa_the_lion_king" DesignTimeRectangle="408, 500, 135, 30" DesignTimeScaleFactor="1.5" FullSelectorArgument="&lt;webctrl href='/celebrity/*' isleaf='1' parentid='modules-wrap' tag='RT-LINK' /&gt;" Guid="aea72977-15cc-4d42-9384-b3862d5c9a3e" ImageBase64="" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Mufasa: The Lion King | Rotten Tomatoes' /&gt;" SearchSteps="Selector" Version="V5" Visibility="Interactive">
+      <TargetAnchorable.Anchors>
+        <scg:List x:TypeArguments="ITarget" Capacity="4">
+          <Target DesignTimeRectangle="206, 500, 69, 30" FuzzySelectorArgument="&lt;webctrl class='key' type='' parentid='modules-wrap' tag='RT-TEXT' aaname='Director' check:innerText='Director' /&gt;" Guid="827bdc8c-024e-4203-94e2-08f431784a50" SearchSteps="FuzzySelector" />
+        </scg:List>
+      </TargetAnchorable.Anchors>
+      <imageRef attrName="InformativeScreenshot" originalValue="e5136f4d7c179f7bb7cc72b298bc8fa6.png" xmlns="">0gLBKzQUjR0Kzv0XoBhZR1Q</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">GetText</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

@@ -89,9 +89,9 @@
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
     <ui:LogMessage DisplayName="Log message (Initialize applications)" sap:VirtualizedContainerService.HintSize="416,173" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Trace" Message="[&quot;Opening applications...&quot;]" />
-    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="I-1.MovieExtraction_OpenBrowser - Invoke Workflow File (MovieExtraction\I-1.MovieExtraction_OpenBrowser.xaml)" sap:VirtualizedContainerService.HintSize="416,168" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="MovieExtraction\I-1.MovieExtraction_OpenBrowser.xaml">
+    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="I-1.MovieExtraction_OpenBrowser - Invoke Workflow File (MovieExtraction\I-1.MovieExtraction_OpenBrowser.xaml)" sap:VirtualizedContainerService.HintSize="416,224" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="MovieExtraction\I-1.MovieExtraction_OpenBrowser.xaml">
       <ui:InvokeWorkflowFile.Arguments>
-        <InArgument x:TypeArguments="x:String" x:Key="in_RPAChallenge">[in_Config("in_RPAChallenge").ToString]</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_RPAChallengeURL">[in_Config("RPAChallengeURL").ToString]</InArgument>
       </ui:InvokeWorkflowFile.Arguments>
     </ui:InvokeWorkflowFile>
   </Sequence>

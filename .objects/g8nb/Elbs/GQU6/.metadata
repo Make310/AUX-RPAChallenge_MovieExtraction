@@ -1,0 +1,13 @@
+﻿{
+  "Name": "Chrome Rotten Tomatoes Movies  TV Shows  Movi(1)",
+  "Type": "Screen",
+  "Id": "GQU68SgdPE6gSkplftUREw",
+  "Reference": "FbyKb7lWrE2X0PieRSaP1Q/GQU68SgdPE6gSkplftUREw",
+  "ParentRef": "FbyKb7lWrE2X0PieRSaP1Q/ElbsbUYy4E2tfynstqRLVA",
+  "Created": "2025-02-20T01:33:51.9787259Z",
+  "Updated": "2025-02-20T01:33:51.9787259Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=24.12.1.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=24.11.1.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

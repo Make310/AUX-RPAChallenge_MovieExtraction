@@ -1,0 +1,13 @@
+﻿{
+  "Name": "Synopsis",
+  "Type": "Element",
+  "Id": "3Vqn0Y3Vc0OKUAm_IDabqw",
+  "Reference": "FbyKb7lWrE2X0PieRSaP1Q/3Vqn0Y3Vc0OKUAm_IDabqw",
+  "ParentRef": "FbyKb7lWrE2X0PieRSaP1Q/C_gPnMM43USAfMZZWHH7UQ",
+  "Created": "2025-02-20T01:49:57.2202787Z",
+  "Updated": "2025-02-20T01:49:57.2202787Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=24.12.1.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=24.11.1.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}
